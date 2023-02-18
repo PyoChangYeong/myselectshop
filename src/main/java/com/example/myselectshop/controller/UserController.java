@@ -1,4 +1,4 @@
-package com.example.myselectshop.Controller;
+package com.example.myselectshop.controller;
 
 import com.example.myselectshop.dto.LoginRequestDto;
 import com.example.myselectshop.dto.SignupRequestDto;

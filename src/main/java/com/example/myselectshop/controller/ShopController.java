@@ -1,4 +1,4 @@
-package com.example.myselectshop.Controller;
+package com.example.myselectshop.controller;
 
 import com.example.myselectshop.security.UserDetailsImpl;
 import com.example.myselectshop.service.FolderService;

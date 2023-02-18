@@ -1,12 +1,15 @@
-package com.example.myselectshop.Controller;
+package com.example.myselectshop.controller;
 
 import com.example.myselectshop.dto.FolderRequestDto;
 import com.example.myselectshop.entity.Folder;
 import com.example.myselectshop.entity.Product;
+import com.example.myselectshop.exception.RestApiException;
 import com.example.myselectshop.security.UserDetailsImpl;
 import com.example.myselectshop.service.FolderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,13 +29,6 @@ public class FolderController {
     ) {
 
         List<String> folderNames = folderRequestDto.getFolderNames();
-
-        System.out.println("======================================================");
-        System.out.println("user.getUsername() = " + userDetails.getUsername());
-        System.out.println("user.getUser() = " + userDetails.getUser());
-        System.out.println("user.getUser().getPassword() = " + userDetails.getUser().getPassword());
-        System.out.println("user.getUser().getId() = " + userDetails.getUser().getId());
-        System.out.println("======================================================");
 
         return folderService.addFolders(folderNames, userDetails.getUsername());
     }
@@ -64,4 +60,6 @@ public class FolderController {
                 userDetails.getUser()
         );
     }
+
+
 }
